@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500" rel="stylesheet" />
+	{% load static %}
+  	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+	<title>Example</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="" class="header__logo"><img src="{% static 'main/images/logo.svg' %}" alt="logo">
+				</a>
+				<nav class="header__menu menu">
+					<div class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="{% url 'main:index' %}" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="{% url 'main:news' %}" class="menu__link">News</a></li>
+							<li class="menu__item"><a href="{% url 'main:analysis' %}" class="menu__link">Analysis</a></li>
+							<li class="menu__item"><a href="{% url 'main:services' %}" class="menu__link">Services</a></li>
+						</ul>
+					</div>
+				</nav>
+				<a href="" class="header__cart cart-header">
+					<span class="cart-header__text">Cart</span>
+					<span class="cart-header__quantity">0</span>
+				</a>
+				<a href="{% url 'main:signupuser' %}" class="header__button button">Sing up</a>
+				<button class="icon-menu" type="button">
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		{% block content %}{% endblock %}
+
+		<footer class="footer">
+			<div class="footer__main main-footer">
+				<div class="main-footer__container">
+					<div class="main-footer__column">
+						<a href="" class="main-footer__logo">
+							<img src="{% static 'main/images/logo.svg' %}" alt="logo">
+						</a>
+						<div class="main-footer__text text">
+							<p>Growfy is a template highly suitable for modern marketing agencies, digital studios, startups and businesses. The design is made in the dark style, which makes the site memorable and you can easily adapt it to your brand.
+							</p>
+						</div>
+						<div class="main-footer__social social">
+							<a href="" class="social__link">
+								<img src="{% static 'main/images/social/01.svg' %}" alt="social">
+							</a>
+							<a href="" class="social__link">
+								<img src="{% static 'main/images/social/02.svg' %}" alt="social">
+							</a>
+							<a href="" class="social__link">
+								<img src="{% static 'main/images/social/03.svg' %}" alt="social">
+							</a>
+							<a href="" class="social__link">
+								<img src="{% static 'main/images/social/04.svg' %}" alt="social">
+							</a>
+							<a href="" class="social__link">
+								<img src="{% static 'main/images/social/05.svg' %}" alt="social">
+							</a>
+						</div>
+					</div>
+					<div class="main-footer__column">
+						<div class="main-footer__label">Pages</div>
+						<nav class="main-footer__menu menu-footer">
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Home</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">About</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Services</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Packages</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Blog</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Contact</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="main-footer__column">
+						<div class="main-footer__label">Utility pages</div>
+						<nav class="main-footer__menu menu-footer">
+							<ul class="menu-footer__list">
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Instructions</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Style guide</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Licenses</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Changelog</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">404 Not found</a>
+								</li>
+								<li class="menu-footer__item">
+									<a href="" class="menu-footer-link">Password protected</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					 <div class="main-footer__column">
+						<div class="main-footer__label">Subscribe to our newsletter</div>
+						<div class="main-footer__text text">Lorem ipsum dolor sit am consectetur adipiscing</div>
+						 <form action="" class="subscribe">
+								<input type="email" placeholder="Enter your email" required class="subscribe__input">
+								<button type="submit" class="subscribe__button button">Subscribe</button>
+						 </form>
+					 </div>
+					</div>
+			</div>
+			<div class="footer__bottom bottom-footer">
+				<div class="bottom-footer__container">
+					<div class="bottom-footer__copy">© 2023</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+<script src="{% static 'main/js/main.js' %}"></script>
+</body>
+</html>
