@@ -3,28 +3,46 @@
 
 {% block content %}
                                               TEST!!!
-<br><br><br><br><br><br><br><br><br><br><br>
-{% if user.is_authenticated %}
+<section class="page__testimonials testimonials">
+					<div class="testimonials__container">
+						<div class="testimonials__header header__main">
+							<h2 class="header-main__title">Using the Django authentication system</h2>
+							<div class="header-main__body">
+								<div class="header-main__text">
 
-   <h1>Hi, your logged in as {{ user.username }}!</h1> <br>
-   <form action="{% url 'main:logoutuser' %}" method="POST">
-       {% csrf_token %}
-    <button type="submit">Log out</button>
-    </form>
 
-{% else %}
+									{% if user.is_authenticated %}
+                                       <h1>Hi, your logged in as {{ user.username }}!</h1> <br>
+                                       <form action="{% url 'main:logoutuser' %}" method="POST">
+                                           {% csrf_token %}
+                                        <button type="submit">Log out</button>
+                                        </form>
 
-  <p>You are not logged in</p>
-  <h1>Sign up</h1>
+                                     {% else %}
 
-{{ error }}
+                                      <p>You are not logged in</p>
+                                      <h1>Sign up</h1>
 
-<form method="POST">
-	{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Sign up</button>
-</form>
-{% endif %}
+                                      {{ error }}
+
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit">Sign up</button>
+                                    </form>
+                                     <br><br>
+                                    <a href="{% url 'main:loginuser' %}">Login</a>
+
+                                    {% endif %}
+								</div>
+
+
+								<div class="header-main__actions">
+						 </div>
+						</div>
+
+					</div>
+				</section>
 
 
 {% endblock %}

@@ -25,7 +25,17 @@ def services(request):
 
 
 def loginuser(request):
-    return render(request, 'main/loginuser.html')
+    if request.method == 'GET':
+        return render(request, 'main/loginuser.html', {'formAuth': AuthenticationForm()})
+    else:
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request, 'main/loginuser.html',
+                          {'formAuth': AuthenticationForm(), 'error': 'Username and password did not match'})
+        else:
+            login(request, user)
+            return redirect('main:signupuser')
+
 
 def logoutuser(request):
     if request.method == 'POST':
