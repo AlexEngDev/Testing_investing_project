@@ -8,6 +8,14 @@
 							<br><h2 class="header-main__title">Read our <br> articles & news</h2>
 							<div class="header-main__body">
 								<div class="header-main__text">
+									{% for new in news %}
+									<div style="text-transform:uppercase;">{{new.title}}</div><br>
+									{{new.text}} <br>
+									{{new}} <br>
+									<img src="{{new.image.url}}" width=40%><br>
+									{{new.date}} <br><br><br>
+
+									{% endfor %}
 								</div>
 								<div class="header-main__actions">
 									<a href="" class="header-main__button button">All News</a>

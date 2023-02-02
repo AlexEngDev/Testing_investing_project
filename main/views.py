@@ -12,8 +12,8 @@ def index(request):
 
 
 def news(request):
-    new = New.objects.order_by('-date')[:10]
-    return render(request, 'main/news.html', {'new': new})
+    news = New.objects.order_by('-date')[:10]
+    return render(request, 'main/news.html', {'news': news})
 
 
 def analysis(request):
