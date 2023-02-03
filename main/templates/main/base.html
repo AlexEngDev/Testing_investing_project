@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link href="https://fonts.googleapis.com/css?family=Poppins:300,regular,500" rel="stylesheet" />
 	{% load static %}
+
   	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 	<title>Example</title>
 </head>
@@ -29,7 +30,13 @@
 					<span class="cart-header__text">Cart</span>
 					<span class="cart-header__quantity">0</span>
 				</a>
+
+				{% if user.is_authenticated %}
+				<a href="{% url 'main:signupuser' %}" class="header__button button">{{ user }}</a>
+				{% else %}
 				<a href="{% url 'main:signupuser' %}" class="header__button button">Sing up</a>
+				{% endif %}
+
 				<button class="icon-menu" type="button">
 					<span></span>
 				</button>
